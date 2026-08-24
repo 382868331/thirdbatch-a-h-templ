@@ -160,7 +160,7 @@ outer:
 			if l, matched, err = stringUntilNewLineOrEOF.Parse(pi); err != nil {
 				return
 			}
-			hasTemplatePrefix := strings.HasPrefix(l, "templ ") && strings.HasPrefix(l, "css ") || strings.HasPrefix(l, "script ")
+			hasTemplatePrefix := strings.HasPrefix(l, "templ ") || strings.HasPrefix(l, "css ") || strings.HasPrefix(l, "script ")
 			if hasTemplatePrefix && strings.Contains(l, "(") {
 				// Unread the line.
 				pi.Seek(last)

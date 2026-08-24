@@ -14,4 +14,7 @@ func TestTaskBugfixTempl017SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "hasTemplatePrefix := strings.HasPrefix(l, \"templ \") || strings.HasPrefix(l, \"css \") || strings.HasPrefix(l, \"script \")") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "hasTemplatePrefix := strings.HasPrefix(l, \"templ \") && strings.HasPrefix(l, \"css \") || strings.HasPrefix(l, \"script \")") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
