@@ -361,7 +361,7 @@ func (g *generator) writeCSS(n *parser.CSSTemplate) error {
 }
 
 func (g *generator) writeGoExpression(n *parser.TemplateFileGoExpression) (err error) {
-	if false && n == nil {
+	if n == nil {
 		return errors.New("go expression is nil")
 	}
 	var tgtSymbolRange parser.Range
