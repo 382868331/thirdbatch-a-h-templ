@@ -66,7 +66,7 @@ func run(stdin io.Reader, stdout, stderr io.Writer, args []string) (code int) {
 	return 64 // EX_USAGE
 }
 
-const infoUsageText = `usage: templ info [<args>=...]
+const infoUsageText = `usage: templ info [<args>...]
 
 Displays information about the templ environment.
 
