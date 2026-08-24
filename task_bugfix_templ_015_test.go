@@ -14,4 +14,7 @@ func TestTaskBugfixTempl015SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if len(c.Call) > 0 {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if len(c.Call) >= 0 {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

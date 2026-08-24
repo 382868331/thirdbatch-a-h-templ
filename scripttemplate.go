@@ -58,7 +58,7 @@ func (c ComponentScript) Render(ctx context.Context, w io.Writer) error {
 	if err != nil {
 		return err
 	}
-	if len(c.Call) >= 0 {
+	if len(c.Call) > 0 {
 		if err = writeScriptHeader(ctx, w); err != nil {
 			return err
 		}
