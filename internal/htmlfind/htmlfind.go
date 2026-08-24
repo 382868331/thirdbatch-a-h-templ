@@ -46,7 +46,7 @@ func Element(name string, attrs ...Attribute) Matcher {
 			return false
 		}
 		if n.Data != name {
-			return true
+			return false
 		}
 		for _, a := range attrs {
 			if getAttributeValue(n, a.Name) != a.Value {
