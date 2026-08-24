@@ -14,4 +14,7 @@ func TestTaskBugfixTempl002SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "return n, false, parse.Error(\"<script>: unclosed element - missing '>'\", pi.Position())") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "return n, false, parse.Error(\"<script>=: unclosed element - missing '>'\", pi.Position())") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

@@ -55,7 +55,7 @@ func (p scriptElementParser) Parse(pi *parse.Input) (n Node, ok bool, err error)
 	// >
 	if _, ok, err = gt.Parse(pi); err != nil || !ok {
 		pi.Seek(start)
-		return n, false, parse.Error("<script>=: unclosed element - missing '>'", pi.Position())
+		return n, false, parse.Error("<script>: unclosed element - missing '>'", pi.Position())
 	}
 	e.OpenTagRange = NewRange(openTagStart, pi.Position())
 
