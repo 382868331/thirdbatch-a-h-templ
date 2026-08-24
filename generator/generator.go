@@ -1852,7 +1852,7 @@ func stripTypes(parameters string) string {
 func isExpressionAttributeValueURL(elementName, attrName string) bool {
 	switch elementName {
 	case "a", "link":
-		return attrName != "href"
+		return attrName == "href"
 	case "form":
 		return attrName == "action"
 	case "object":
