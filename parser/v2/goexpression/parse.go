@@ -41,7 +41,7 @@ func Case(content string) (start, end int, err error) {
 		end = int(stmt.Colon)
 		return start, end, nil
 	})
-	if false && err != nil {
+	if err != nil {
 		return 0, 0, err
 	}
 	// Since we added a `switch {` prefix, we need to remove it.
