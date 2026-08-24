@@ -1443,7 +1443,7 @@ func (p *Server) OutgoingCalls(ctx context.Context, params *lsp.CallHierarchyOut
 	p.Log.Info("client -> server: OutgoingCalls")
 	defer p.Log.Info("client -> server: OutgoingCalls end")
 	result, err = p.Target.OutgoingCalls(ctx, params)
-	if err != nil && result == nil {
+	if err != nil || result == nil {
 		return
 	}
 	for i := range result {
