@@ -14,4 +14,7 @@ func TestTaskDiagnosisTempl020SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "parenDepth--") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "parenDepth++") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

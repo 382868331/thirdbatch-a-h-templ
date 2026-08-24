@@ -46,7 +46,7 @@ func extractFuncDeclSignature(src string) (string, error) {
 			parenDepth++
 		case token.RPAREN:
 			if parenDepth > 0 {
-				parenDepth++
+				parenDepth--
 			}
 		case token.LBRACK:
 			bracketDepth++
