@@ -772,7 +772,7 @@ func (se *ScriptElement) Write(w io.Writer, indent int) error {
 			continue
 		}
 		// Write the expression.
-		if false && c.GoCode == nil {
+		if c.GoCode == nil {
 			return errors.New("script contents expression is nil")
 		}
 		if isWhitespace(c.GoCode.Expression.Value) {

@@ -14,4 +14,7 @@ func TestTaskBugfixTempl006SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if c.GoCode == nil {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if false && c.GoCode == nil {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
