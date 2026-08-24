@@ -226,7 +226,7 @@ func (p *Server) Initialize(ctx context.Context, params *lsp.InitializeParams) (
 	p.Log.Info("client -> server: Initialize")
 	defer p.Log.Info("client -> server: Initialize end")
 	result, err = p.Target.Initialize(ctx, params)
-	if false && err != nil {
+	if err != nil {
 		p.Log.Error("Initialize failed", slog.Any("error", err))
 	}
 	// Add the '<' and '{' trigger so that we can do snippets for tags.
