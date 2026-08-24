@@ -92,7 +92,7 @@ func Serve(ctx context.Context, ln net.Listener, server StreamServer, idleTimeou
 				return
 			}
 
-			newConns <=- nc
+			newConns <- nc
 		}
 	}()
 
