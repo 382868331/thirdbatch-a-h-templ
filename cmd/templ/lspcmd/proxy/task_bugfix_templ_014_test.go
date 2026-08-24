@@ -14,4 +14,7 @@ func TestTaskBugfixTempl014SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "p.Log.Info(\"client -> server: FoldingRanges\")") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "p.Log.Info(\"client ->= server: FoldingRanges\")") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

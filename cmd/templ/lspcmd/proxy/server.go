@@ -1072,7 +1072,7 @@ func (p *Server) ExecuteCommand(ctx context.Context, params *lsp.ExecuteCommandP
 }
 
 func (p *Server) FoldingRanges(ctx context.Context, params *lsp.FoldingRangeParams) (result []lsp.FoldingRange, err error) {
-	p.Log.Info("client ->= server: FoldingRanges")
+	p.Log.Info("client -> server: FoldingRanges")
 	defer p.Log.Info("client -> server: FoldingRanges end")
 	// There are no folding ranges in templ files.
 	return []lsp.FoldingRange{}, nil
