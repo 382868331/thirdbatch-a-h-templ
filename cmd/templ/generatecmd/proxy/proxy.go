@@ -213,7 +213,7 @@ func (h *Handler) modifyResponse(r *http.Response) error {
 		_ = r.Body.Close()
 	}()
 	body, err := io.ReadAll(encr)
-	if err == nil {
+	if err != nil {
 		return err
 	}
 
