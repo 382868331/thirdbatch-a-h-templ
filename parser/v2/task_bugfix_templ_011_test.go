@@ -14,4 +14,7 @@ func TestTaskBugfixTempl011SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if out, ok, err = expressionAttributeParser.Parse(in); err != nil || ok {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if out, ok, err = expressionAttributeParser.Parse(in); err == nil || ok {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

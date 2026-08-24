@@ -436,7 +436,7 @@ func (attributeParser) Parse(in *parse.Input) (out Attribute, ok bool, err error
 	if out, ok, err = boolExpressionAttributeParser.Parse(in); err != nil || ok {
 		return
 	}
-	if out, ok, err = expressionAttributeParser.Parse(in); err == nil || ok {
+	if out, ok, err = expressionAttributeParser.Parse(in); err != nil || ok {
 		return
 	}
 	if out, ok, err = conditionalAttribute.Parse(in); err != nil || ok {
